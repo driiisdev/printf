@@ -15,7 +15,7 @@ What you would learn from this project:
 
 ## Usage
 * Prints a string to the standard output, according to a given format
-* All files were created and compiled on Ubuntu 20.04.1 LTS using GCC 9.4.0 with the command gcc -Wall -Werror -Wextra -pedantic *.c
+* All files were created and compiled on Ubuntu 20.04.1 LTS using GCC 9.4.0 with the command `gcc -Wall -Werror -Wextra -pedantic *.c`
 * Returns the number of characters in the output string on success, -1 otherwise
 * Call it this way: `_printf("format string", arguments...)` where format string can contain conversion specifiers and flags, along with regular characters.
 
@@ -25,7 +25,7 @@ The format tags prototype is the following:
 
     %[flags][length]specifier
 
-If the program runs successfully, the return value is the amount of chars printed
+If the program runs successfully, the return value is the amount of chars printed.
 
 | Specifier | Output              |
 | --------- | ------------------- |
@@ -44,6 +44,80 @@ If the program runs successfully, the return value is the amount of chars printe
 | S         | String with special chars replaced by their ASCII value |
 
 ## Examples
-* `_printf("Hello, Holberton\n")` prints "Hello, ALX_AFRCA", followed by a new line
-* `_printf("%s", "Hello")` prints "Hello"
-* `_printf("This is a number: %d", 98)` prints "This is a number: 98"
+Printing a Character:
+
+   - Input: `_printf("The first letter in the alphabet is %c\n", 'A');`
+   - Output: `The first letter in the alphabet is A`
+
+Print an String:
+
+   - Input: `_printf("Hello %s.", "ALX School");`
+   - Output: `Hello ALX School`
+
+Printing a Integer:
+
+   - Input: `_printf("2 + 2 is equal to %d.", 4);`
+   - Output: `2 + 2 is equal to 4`
+
+Printing a Decimal:
+
+   - Input: `_printf("%b\n", 10010);`
+   - Output: `18 in binary is 10010`
+
+---
+
+## File Functions
+
+### _printf.c
+the function that imitates printf(), by printing data.
+
+### main.h
+Header file where all Protypes are saved.
+
+### man_3_printf
+manpage file
+
+### parse_char.c
+Function that writes the Buffer Character.
+    /* Indetifier : %c */
+
+### parse_int.c
+Function that Prints an Integer.
+    /* Indetifier : %i or %d */
+
+### parse_string.c
+Function that Prints out a String.
+    /* Indetifier : %s */
+
+### parse_binary.c
+Function that Prints a Binary.
+    /* Indetifier : %b */
+
+### parse_perc.c
+Function that Prints a Percentage symbol.
+    /* Indetifier : %% */
+
+### parse_oct.c
+Function that Prints Decimal in Octal.
+	/* Indetifier : %o */
+
+### parse_hex.c
+Function that Prints Decimal in Hexadecimal.
+	/* Indetifier : %x */
+
+### parse_x_X.c
+Function that prints Decimal in Uppercase Hexadecimal.
+	/* Indetifier : %X */
+
+### parse_unit.c
+Function that Prints an Unsigned Integer.
+	/* Indetifier : %u */
+
+### parse_buff.c
+Function that Prints the Buffer
+
+### CONTRIBUTION.md
+Documentation stating the styleguide on how the work flow was carried out.
+
+### .gitignore
+Files to be ignored when pushing to github.
