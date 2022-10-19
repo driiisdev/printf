@@ -26,3 +26,24 @@ The format tags prototype is the following:
     %[flags][length]specifier
 
 If the program runs successfully, the return value is the amount of chars printed
+
+| Specifier | Output              |
+| --------- | ------------------- |
+| c         | Character           |
+| d or i    | Decimal integer     |
+| s         | String              |
+| b         | Binary              |
+| %         | Percentage charater |
+| o         | Signed Octal        |
+| u         | Unsigned Integer    |
+| x         | Unsigned Hexadecimal|
+| X         | Unsigned Hexadecimal (uppercase) |
+| p         | Pointer address     |
+| r         | Reversr string of characters |
+| R         | ROT13 translaton of string |
+| S         | String with special chars replaced by their ASCII value |
+
+## Examples
+* `_printf("Hello, Holberton\n")` prints "Hello, ALX_AFRCA", followed by a new line
+* `_printf("%s", "Hello")` prints "Hello"
+* `_printf("This is a number: %d", 98)` prints "This is a number: 98"
