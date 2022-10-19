@@ -23,6 +23,6 @@ The **format** contains the string that is printed. As _printf() is variadic fun
 
 The format tags prototype is the following:
 
-`%[flags][length]specifier`
+<!-- `%[flags][length]specifier` -->
 
 If the program runs successfully, the return value is the amount of chars printed
