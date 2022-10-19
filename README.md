@@ -19,6 +19,6 @@ What you would learn from this project:
 * Returns the number of characters in the output string on success, -1 otherwise
 * Call it this way: `_printf("format string", arguments...)` where format string can contain conversion specifiers and flags, along with regular characters.
 
-The [#format] contains the string that is printed. As _printf() is variadic function, it can receives n arguments that replace by n tags written inside the string.
+The [format](#format) contains the string that is printed. As _printf() is variadic function, it can receives n arguments that replace by n tags written inside the string.
 
 The format tags prototype is the following:
