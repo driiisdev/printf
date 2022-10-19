@@ -69,55 +69,79 @@ Printing a Decimal:
 ## File Functions
 
 ### _printf.c
+
 the function that imitates printf(), by printing data.
 
 ### main.h
+
 Header file where all Protypes are saved.
 
 ### man_3_printf
+
 manpage file
 
 ### parse_char.c
+
 Function that writes the Buffer Character.
+
     /* Indetifier : %c */
 
 ### parse_int.c
+
 Function that Prints an Integer.
+
     /* Indetifier : %i or %d */
 
 ### parse_string.c
+
 Function that Prints out a String.
+
     /* Indetifier : %s */
 
 ### parse_binary.c
+
 Function that Prints a Binary.
+
     /* Indetifier : %b */
 
 ### parse_perc.c
+
 Function that Prints a Percentage symbol.
+
     /* Indetifier : %% */
 
 ### parse_oct.c
+
 Function that Prints Decimal in Octal.
+
 	/* Indetifier : %o */
 
 ### parse_hex.c
+
 Function that Prints Decimal in Hexadecimal.
+
 	/* Indetifier : %x */
 
 ### parse_x_X.c
+
 Function that prints Decimal in Uppercase Hexadecimal.
+
 	/* Indetifier : %X */
 
 ### parse_unit.c
+
 Function that Prints an Unsigned Integer.
+
 	/* Indetifier : %u */
 
 ### parse_buff.c
+
 Function that Prints the Buffer
 
 ### CONTRIBUTION.md
+
 Documentation stating the styleguide on how the work flow was carried out.
 
 ### .gitignore
+
 Files to be ignored when pushing to github.
