@@ -70,53 +70,57 @@ Printing a Decimal:
 
 ### _printf.c
 
-the function that imitates printf(), by printing data.
+contains the fucntion `_printf`, which uses the prototype `int _printf(const char *format, ...)`;. The format string is composed of zero or more directives. See `man 3 printf` for more detail. `_printf` will return the number of characters printed (excluding the null byte used to end output to strings) and will write output to **stdout**, the standard output stream.
+
+### _putchar.c
+
+contains the function `_putchar`, which writes a character to stdout.
 
 ### main.h
 
-Header file where all Protypes are saved.
+contains all function prototypes used for `_printf`.
 
 ### man_3_printf
 
 manpage file
 
-### parse_char.c
+### print_char.c
 
 Function that writes the Buffer Character.
 
     /* Indetifier : %c */
 
-### parse_int.c
+### print_int.c
 
 Function that Prints an Integer.
 
     /* Indetifier : %i or %d */
 
-### parse_string.c
+### print_string.c
 
 Function that Prints out a String.
 
     /* Indetifier : %s */
 
-### parse_binary.c
+### print_binary.c
 
 Function that Prints a Binary.
 
     /* Indetifier : %b */
 
-### parse_perc.c
+### print_perc.c
 
 Function that Prints a Percentage symbol.
 
     /* Indetifier : %% */
 
-### parse_oct.c
+### print_oct.c
 
 Function that Prints Decimal in Octal.
 
 	/* Indetifier : %o */
 
-### parse_hex.c
+### print_hex.c
 
 Function that Prints Decimal in Hexadecimal.
 
@@ -145,3 +149,8 @@ Documentation stating the styleguide on how the work flow was carried out.
 ### .gitignore
 
 Files to be ignored when pushing to github.
+
+## Authors
+[Idris Yakub](https://github.com/driiisdev) | [@driiisdev](https://twitter.com/driiisdev)
+
+[Nkosinathi Radebe](https://github.com/nkradebeJHB) | [@nkradebeJHB](https://twitter.com/nkradebeJHB)
