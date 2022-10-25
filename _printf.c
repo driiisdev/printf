@@ -23,26 +23,20 @@ while (format && format[i])
 if (format[i] == '%')
 {
 if (format[++i] == '%')
-{
 len += _putchar('%');
-}
 j = 0;
 while (j <= 12)
 {
 if (format[i] == func_types[j].t)
-{
 len += func_types[j].f(valist);
 count = 1;
 break;
-}
 j++;
 }
 if (!count && format[i] != '%')
-{
 len += 2;
 _putchar('%');
 _putchar(format[i]);
-}
 }
 else
 {
