@@ -1,0 +1,30 @@
+#include "main.h"
+/**
+ * print_pointer - print an address (pointer)
+ * @P: argument
+ * Return: hex
+ */
+
+int print_pointer(va_list P)
+{
+void *ptr = va_arg(P, void*);
+long int cast;
+int a, i;
+char nl[] = "(nil)";
+
+if (!ptr)
+{
+for (i = 0; nl[i]; i++)
+{
+_putchar(nl[i]);
+}
+return (i);
+}
+
+cast = (unsigned long int)ptr;
+_putchar('0');
+_putchar('x');
+a = print_hex(cast, 0);
+
+return (a + 2);
+}

@@ -24,24 +24,24 @@ _putchar('0' + num % 10);
  */
 int print_int(va_list i)
 {
-	unsigned int n = va_arg(i, int);
-	int count = 1, num = n;
+unsigned int n = va_arg(i, int);
+int count = 1, num = n;
 
-	if (num < 0)
-	{
-		_putchar('-');
-		num *= -1;
-		n = num;
-		count += 1;
-	}
+if (num < 0)
+{
+_putchar('-');
+num *= -1;
+n = num;
+count += 1;
+}
 
-	while (n > 9)
-    {
-		n /= 10,
-		count++;
-    }
+while (n > 9)
+{
+n /= 10;
+count++;
+}
 
-	print_num_rec(num);
+print_num_rec(num);
 
-	return (count);
+return (count);
 }

@@ -7,26 +7,35 @@
  */
 int print_hex_lower(va_list x)
 {
-	unsigned int c = va_arg(x, unsigned int);
-	int  i = 0, j, temp = 0;
-	int arr[128];
+unsigned int c = va_arg(x, unsigned int);
+int  i = 0, j, temp = 0;
+int arr[128];
 
-	if (c == 0)
-		return (_putchar('0'));
+if (c == 0)
+{
+return (_putchar('0'));
+}
 
-	while (c != 0)
-	{
-		temp = c % 16;
-		if (temp < 10)
-			arr[i] = 48 + temp;
-		else
-			arr[i] = 87 + temp;
-		c /= 16;
-		i++;
-	}
-	for (j = i - 1; j >= 0; j--)
-		_putchar(arr[j]);
-	return (i);
+while (c != 0)
+{
+temp = c % 16;
+if (temp < 10)
+{
+arr[i] = 48 + temp;
+}
+else
+{
+arr[i] = 87 + temp;
+}
+c /= 16;
+i++;
+}
+for (j = i - 1; j >= 0; j--)
+{
+_putchar(arr[j]);
+}
+
+return (i);
 }
 
 /**
@@ -36,27 +45,35 @@ int print_hex_lower(va_list x)
  */
 int print_hex_upper(va_list X)
 {
-	unsigned int c = va_arg(X, unsigned int);
-	int  i = 0, j, temp = 0;
-	int arr[128];
+unsigned int c = va_arg(X, unsigned int);
+int  i = 0, j, temp = 0;
+int arr[128];
 
-	if (c == 0)
-		return (_putchar('0'));
+if (c == 0)
+{
+return (_putchar('0'));
+}
 
-	while (c != 0)
-	{
-		temp = c % 16;
-		if (temp < 10)
-			arr[i] = 48 + temp;
-		else
-			arr[i] = 55 + temp;
-		c /= 16;
-		i++;
-	}
-	for (j = i - 1; j >= 0; j--)
-		_putchar(arr[j]);
+while (c != 0)
+{
+temp = c % 16;
+if (temp < 10)
+{
+arr[i] = 48 + temp;
+}
+else
+{
+arr[i] = 55 + temp;
+}
+c /= 16;
+i++;
+}
+for (j = i - 1; j >= 0; j--)
+{
+_putchar(arr[j]);
+}
 
-	return (i);
+return (i);
 }
 
 /**
@@ -67,23 +84,33 @@ int print_hex_upper(va_list X)
  */
 int print_hex(unsigned long int c, int cap)
 {
-	int  i = 0, j, temp = 0;
-	int arr[128];
+int  i = 0, j, temp = 0;
+int arr[128];
 
-	if (c == 0)
-		return (_putchar('0'));
+if (c == 0)
+{
+return (_putchar('0'));
+}
 
-	while (c != 0)
-	{
-		temp = c % 16;
-		if (temp < 10)
-			arr[i] = 48 + temp;
-		else
-			arr[i] = cap ? 55 + temp : 87 + temp;
-		c /= 16;
-		i++;
-	}
-	for (j = i - 1; j >= 0; j--)
-		_putchar(arr[j]);
-	return (i);
+while (c != 0)
+{
+temp = c % 16;
+if (temp < 10)
+{
+arr[i] = 48 + temp;
+}
+else
+{
+arr[i] = cap ? 55 + temp : 87 + temp;
+}
+c /= 16;
+i++;
+}
+
+for (j = i - 1; j >= 0; j--)
+{
+_putchar(arr[j]);
+}
+
+return (i);
 }

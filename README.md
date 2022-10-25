@@ -33,13 +33,12 @@ If the program runs successfully, the return value is the amount of chars printe
 | d or i    | Decimal integer     |
 | s         | String              |
 | b         | Binary              |
-| %         | Percentage charater |
 | o         | Signed Octal        |
 | u         | Unsigned Integer    |
 | x         | Unsigned Hexadecimal|
 | X         | Unsigned Hexadecimal (uppercase) |
-| p         | Pointer address     |
-| r         | Reversr string of characters |
+| p         | Address (pointer)     |
+| r         | Reverse string of characters |
 | R         | ROT13 translaton of string |
 | S         | String with special chars replaced by their ASCII value |
 
@@ -108,17 +107,17 @@ Function that Prints a Binary.
 
     /* Indetifier : %b */
 
-### print_perc.c
-
-Function that Prints a Percentage symbol.
-
-    /* Indetifier : %% */
-
 ### print_oct.c
 
 Function that Prints Decimal in Octal.
 
 	/* Indetifier : %o */
+
+### print_unsigned.c
+
+Function that Prints an Unsigned Integer.
+
+	/* Indetifier : %u */
 
 ### print_hex.c
 
@@ -126,31 +125,38 @@ Function that Prints Decimal in Hexadecimal.
 
 	/* Indetifier : %x */
 
-### parse_x_X.c
+### print_hex_upper.c
 
 Function that prints Decimal in Uppercase Hexadecimal.
 
 	/* Indetifier : %X */
 
-### parse_unit.c
+### print_pointer.c
 
-Function that Prints an Unsigned Integer.
+Function that print an address (pointer).
 
-	/* Indetifier : %u */
+	/* Indetifier : %P */
 
-### parse_buff.c
+### print_rev.c
 
-Function that Prints the Buffer
+Function that prints a string, in reverse.
 
-### CONTRIBUTION.md
+	/* Indetifier : %r */
 
-Documentation stating the styleguide on how the work flow was carried out.
+### print_rot13.c
 
-### .gitignore
+Function that print string in rot13.
 
-Files to be ignored when pushing to github.
+	/* Indetifier : %R */
+
+### print_special_chars.c
+
+Function that Prints a special characters.
+
+    /* Indetifier : %S */
+
 
 ## Authors
 [Idris Yakub](https://github.com/driiisdev) | [@driiisdev](https://twitter.com/driiisdev)
 
-[Nkosinathi Radebe](https://github.com/nkradebeJHB) | [@nkradebeJHB](https://twitter.com/nkradebeJHB)
+[Nkosinathi Radebe](https://github.com/nkradebeJHB)

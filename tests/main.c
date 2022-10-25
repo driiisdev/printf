@@ -3,8 +3,8 @@
 #include "main.h"
 /**
  * main - Entry point
- *
- * Return: Always 0
+ * 
+ * Return: (0)
  */
 
 int main(void)
@@ -40,5 +40,6 @@ int main(void)
     printf("Len:[%d]\n", len2);
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
+
     return (0);
 }
