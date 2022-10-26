@@ -1,50 +1,86 @@
 #include "main.h"
 /**
+ *  check_for_specifiers - checks if there is a valid format specifier
  * _printf - produces output according to a format.
  * @format: format string containing the characters.
  * Return: the number of characters printed (excluding the null byte)
  */
+static int (*check_for_specifiers(const char *format))(va_list)
+{
+unsigned int i;
+print_t p[] = {
+{'i', print_int},
+{'s', print_string},
+{'c', print_char},
+{'d', print_int},
+{'u', print_unsigned},
+{'x', print_hex_lower},
+{'X', print_hex_upper},
+{'b', print_binary},
+{'o', print_oct},
+{'R', print_rot13},
+{'r', print_rev},
+{'S', print_special_chars},
+{'p', print_pointer},
+{'%', print_perc},
+{NULL, NULL}
+};
 
+for (i = 0; p[i].t != NULL; i++)
+{
+if (*(p[i].t) == *format)
+{
+break;
+}
+}
+return (p[i].f);
+}
+
+/**
+ * _printf - prints anything
+ * @format: list of argument types passed to the function
+ *
+ * Return: number of characters printed
+ */
 int _printf(const char *format, ...)
 {
-int (*pfunc)(va_list, flags_t *);
-const char *p;
-va_list arguments;
-flags_t flags = {0, 0, 0};
-register int count = 0;
-va_start(arguments, format);
-if (!format || (format[0] == '%' && !format[1]))
-{
+unsigned int i = 0, count = 0;
+va_list valist;
+int (*f)(va_list);
+if (format == NULL)
 return (-1);
+va_start(valist, format);
+while (format[i])
+{
+for (; format[i] != '%' && format[i]; i++)
+{
+_putchar(format[i]);
+count++;
 }
-if (format[0] == '%' && format[1] == ' ' && !format[2])
+if (!format[i])
 {
-return (-1);
+return (count);
 }
-for (p = format; *p; p++)
+f = check_for_specifiers(&format[i + 1]);
+if (f != NULL)
 {
-if (*p == '%')
-{
-p++;
-if (*p == '%')
-{
-count += _putchar('%');
+count += f(valist);
+i += 2;
 continue;
 }
-while (get_flag(*p, &flags))
+if (!format[i + 1])
+return (-1);
+_putchar(format[i]);
+count++;
+if (format[i + 1] == '%')
 {
-p++;
-}
-pfunc = get_print(*p);
-count += (pfunc)
-? pfunc(arguments, &flags) : _printf("%%%c", *p);
+i += 2;
 }
 else
 {
-count += _putchar(*p);
+i++;
 }
 }
-_putchar(-1);
-va_end(arguments);
+va_end(valist);
 return (count);
 }

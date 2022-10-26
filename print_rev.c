@@ -5,12 +5,10 @@
  * Return: int
  */
 
-int print_rev(va_list r, flags_t *f)
+int print_rev(va_list r)
 {
 int i = 0, j;
 char *s = va_arg(r, char *);
-
-(void)f;
 
 if (!s)
 {

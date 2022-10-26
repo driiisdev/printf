@@ -5,23 +5,25 @@
  * Return: number of char printed
  */
 
-int print_pointer(va_list P, flags_t *f)
+int print_pointer(va_list P)
 {
-char *str;
-unsigned long int ptr = va_arg(P, unsigned long int);
+void *p = va_arg(P, void*);
+long int cast;
+int a, i;
+char nl[] = "(nil)";
 
-register int count = 0;
-
-(void)f;
-
-if (!ptr)
+if (!p)
 {
-    return (_puts("(nil)"));
+    for (i = 0; nl[i]; i++)
+    {
+    _putchar(nl[i]);
+    }
+    return (i);
 }
 
-str = convert(ptr, 16, 1);
-count += _puts("0x");
-count += _puts(str);
-
-return (count);
+cast = (unsigned long int)p;
+_putchar('0');
+_putchar('x');
+a = print_hex(cast, 0);
+return (a + 2);
 }

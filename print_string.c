@@ -5,15 +5,18 @@
  * Return: int
  */
 
-int print_string(va_list s, flags_t *f)
+int print_string(va_list s)
 {
-char *s = va_arg(s, char *);
+    int count;
+	char *str = va_arg(s, char *);
 
-(void)f;
-
-if (!s)
-{
-    s = "(null)";
-}
-return (_puts(s));
+	if (str == NULL)
+    {
+		str = "(null)";
+    }
+	for (count = 0; str[count]; count++)
+	{
+		_putchar(str[count]);
+	}
+	return (count);
 }

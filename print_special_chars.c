@@ -5,31 +5,29 @@
  * Return: int
  */
 
-int print_special_chars(va_list S, flags_t *f)
+int print_special_chars(va_list S)
 {
 int i, count = 0;
 	char *res;
 	char *s = va_arg(S, char *);
-
-	(void)f;
     
 	if (!s)
     {
-		return (_puts("(null)"));
+		return (_putchar("(null)"));
     }
 
 	for (i = 0; s[i]; i++)
 	{
 		if (s[i] > 0 && (s[i] < 32 || s[i] >= 127))
 		{
-			_puts("\\x");
+			_putchar("\\x");
 			count += 2;
 			res = convert(s[i], 16, 0);
 			if (!res[1])
             {
 				count += _putchar('0');
             }
-			count += _puts(res);
+			count += _putchar(res);
 		}
 		else
         {

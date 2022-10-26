@@ -22,7 +22,7 @@ _putchar((num % 10) + '0');
  * @i: Integer
  * Return: int
  */
-int print_int(va_list i, flags_t *f)
+int print_int(va_list i)
 {
 unsigned int n = va_arg(i, int);
 int count = 1, num = n;

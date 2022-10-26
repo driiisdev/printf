@@ -5,15 +5,13 @@
  * Return: int
  */
 
-int print_rot13(va_list R, flags_t *f)
+int print_rot13(va_list R)
 {
 unsigned int i, j;
 int count = 0;
 char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 char rot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 char *str = va_arg(R, char *);
-
-(void)f;
 
 if (!str)
 {

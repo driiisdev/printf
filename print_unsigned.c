@@ -5,11 +5,17 @@
  * Return: int
  */
 
-int print_unsigned(va_list u, flags_t *f)
+int print_unsigned(va_list u)
 {
-unsigned int u = va_arg(u, unsigned int);
-char *str = convert(u, 10, 0);
+	unsigned int n = va_arg(u, int);
+	long int count = 1, num = n;
 
-(void)f;
-return (_puts(str));
+	while (n > 9)
+    {
+		n /= 10,
+		count++;
+    }
+
+	print_num_rec(num);
+	return (count);
 }

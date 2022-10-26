@@ -5,9 +5,8 @@
  * Return: int
  */
 
-int print_perc(va_list perc, flags_t *f)
+int print_perc(va_list perc)
 {
 	(void)perc;
-	(void)f;
 	return (_putchar('%'));
 }
