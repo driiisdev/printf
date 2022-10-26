@@ -33,6 +33,7 @@ If the program runs successfully, the return value is the amount of chars printe
 | d or i    | Decimal integer     |
 | s         | String              |
 | b         | Binary              |
+| %         | percentage character|
 | o         | Signed Octal        |
 | u         | Unsigned Integer    |
 | x         | Unsigned Hexadecimal|

@@ -5,25 +5,15 @@
  * Return: int
  */
 
-int print_string(va_list s)
+int print_string(va_list s, flags_t *f)
 {
-int i;
-char *str = va_arg(s, char *);
-char nl[] = "(null)";
+char *s = va_arg(s, char *);
 
-if (!str)
-{
-for (i = 0; nl[i]; i++)
-{
-_putchar(nl[i]);
-}
-return (i);
-}
+(void)f;
 
-for (i = 0; str[i]; i++)
+if (!s)
 {
-_putchar(str[i]);
+    s = "(null)";
 }
-
-return (i);
+return (_puts(s));
 }

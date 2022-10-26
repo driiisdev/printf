@@ -5,37 +5,20 @@
  * @x: unsigned int
  * Return: int
  */
-int print_hex_lower(va_list x)
+int print_hex_lower(va_list x, flags_t *f)
 {
-unsigned int c = va_arg(x, unsigned int);
-int  i = 0, j, temp = 0;
-int arr[128];
+unsigned int num = va_arg(x, unsigned int);
+char *str = convert(num, 16, 1);
+int count = 0;
 
-if (c == 0)
+if (f->hash == 1 && str[0] != '0')
 {
-return (_putchar('0'));
-}
-
-while (c != 0)
-{
-temp = c % 16;
-if (temp < 10)
-{
-arr[i] = 48 + temp;
-}
-else
-{
-arr[i] = 87 + temp;
-}
-c /= 16;
-i++;
-}
-for (j = i - 1; j >= 0; j--)
-{
-_putchar(arr[j]);
+    count += _puts("0x");
 }
 
-return (i);
+count += _puts(str);
+
+return (count);
 }
 
 /**
@@ -43,74 +26,18 @@ return (i);
  * @X: unsigned int
  * Return: int
  */
-int print_hex_upper(va_list X)
+int print_hex_upper(va_list X, flags_t *f)
 {
-unsigned int c = va_arg(X, unsigned int);
-int  i = 0, j, temp = 0;
-int arr[128];
+unsigned int num = va_arg(X, unsigned int);
+char *str = convert(num, 16, 0);
+int count = 0;
 
-if (c == 0)
+if (f->hash == 1 && str[0] != '0')
 {
-return (_putchar('0'));
-}
-
-while (c != 0)
-{
-temp = c % 16;
-if (temp < 10)
-{
-arr[i] = 48 + temp;
-}
-else
-{
-arr[i] = 55 + temp;
-}
-c /= 16;
-i++;
-}
-for (j = i - 1; j >= 0; j--)
-{
-_putchar(arr[j]);
+    count += _puts("0X");
 }
 
-return (i);
-}
+count += _puts(str);
 
-/**
- * print_hex - print an address
- * @c: unsigned long int
- * @cap: int
- * Return: no return
- */
-int print_hex(unsigned long int c, int cap)
-{
-int  i = 0, j, temp = 0;
-int arr[128];
-
-if (c == 0)
-{
-return (_putchar('0'));
-}
-
-while (c != 0)
-{
-temp = c % 16;
-if (temp < 10)
-{
-arr[i] = 48 + temp;
-}
-else
-{
-arr[i] = cap ? 55 + temp : 87 + temp;
-}
-c /= 16;
-i++;
-}
-
-for (j = i - 1; j >= 0; j--)
-{
-_putchar(arr[j]);
-}
-
-return (i);
+return (count);
 }

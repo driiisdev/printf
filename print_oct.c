@@ -5,28 +5,18 @@
  * Return: int
  */
 
-int print_oct(va_list o)
+int print_oct(va_list o, flags_t *f)
 {
-unsigned int n = va_arg(o, unsigned int);
-int  i = 0, j;
-int arr[128];
+unsigned int num = va_arg(o, unsigned int);
+char *str = convert(num, 8, 0);
+int count = 0;
 
-if (n == 0)
+if (f->hash == 1 && str[0] != '0')
 {
-_putchar('0');
-return (1);
+    count += _putchar('0');
 }
 
-while (n != 0)
-{
-arr[i++] = n % 8;
-n /= 8;
-}
+count += _puts(str);
 
-for (j = i - 1; j >= 0; j--)
-{
-_putchar(arr[j] + '0');
-}
-
-return (i);
+return (count);
 }

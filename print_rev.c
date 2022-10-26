@@ -5,30 +5,27 @@
  * Return: int
  */
 
-int print_rev(va_list r)
+int print_rev(va_list r, flags_t *f)
 {
-int i = 0, len = 0;
-char *str = va_arg(r, char *);
-char nl[] = "(null)";
+int i = 0, j;
+char *s = va_arg(r, char *);
 
-if (!str)
+(void)f;
+
+if (!s)
 {
-for (i = 0; nl[i]; i++)
-{
-_putchar(nl[i]);
+    s = "(null)";
 }
+
+while (s[i])
+{
+    i++;
+}
+
+for (j = i - 1; j >= 0; j--)
+{
+    _putchar(s[j]);
+}
+
 return (i);
-}
-
-while (str[len] != '\0')
-{
-len++;
-}
-
-for (i = len - 1; i >= 0; i--)
-{
-_putchar(str[i]);
-}
-
-return (len);
 }

@@ -5,7 +5,9 @@
  * Return: int
  */
 
-int print_char(va_list c)
+int print_char(va_list c, flags_t *f)
 {
-return (_putchar(va_arg(c, int)));
+    (void)f;
+    _putchar(va_arg(c, int));
+    return (1);
 }

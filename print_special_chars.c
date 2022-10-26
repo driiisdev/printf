@@ -1,46 +1,41 @@
 #include "main.h"
 /**
- * print_special_chars - convert to special chars
+ * print_special_chars - convert to special characters
  * @S: argument
  * Return: int
  */
 
-int print_special_chars(va_list S)
+int print_special_chars(va_list S, flags_t *f)
 {
-int i, len = 0;
-char *schr = va_arg(S, char *);
-unsigned int h;
-char nl[] = "(null)";
+int i, count = 0;
+	char *res;
+	char *s = va_arg(S, char *);
 
-if (!schr)
-{
-for (i = 0; nl[i]; i++)
-_putchar(nl[i]);
-return (i);
-}
+	(void)f;
+    
+	if (!s)
+    {
+		return (_puts("(null)"));
+    }
 
-for (i = 0; schr[i] != '\0'; i++)
-{
+	for (i = 0; s[i]; i++)
+	{
+		if (s[i] > 0 && (s[i] < 32 || s[i] >= 127))
+		{
+			_puts("\\x");
+			count += 2;
+			res = convert(s[i], 16, 0);
+			if (!res[1])
+            {
+				count += _putchar('0');
+            }
+			count += _puts(res);
+		}
+		else
+        {
+			count += _putchar(s[i]);
+        }
+	}
 
-if (schr[i] < 32 || schr[i] >= 127)
-{
-_putchar(92);
-_putchar(120);
-len = len + 2;
-h = schr[i];
-if (h < 16)
-{
-_putchar (48),
-len++;
-}
-len = len + print_hex(h, 1);
-}
-else
-{
-_putchar(schr[i]),
-len++;
-}
-}
-
-return (len);
+	return (count);
 }

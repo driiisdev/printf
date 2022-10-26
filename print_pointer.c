@@ -1,30 +1,27 @@
 #include "main.h"
 /**
- * print_pointer - print an address (pointer)
+ * print_pointer - print an address (pointer) in hex format
  * @P: argument
- * Return: hex
+ * Return: number of char printed
  */
 
-int print_pointer(va_list P)
+int print_pointer(va_list P, flags_t *f)
 {
-void *ptr = va_arg(P, void*);
-long int cast;
-int a, i;
-char nl[] = "(nil)";
+char *str;
+unsigned long int ptr = va_arg(P, unsigned long int);
+
+register int count = 0;
+
+(void)f;
 
 if (!ptr)
 {
-for (i = 0; nl[i]; i++)
-{
-_putchar(nl[i]);
-}
-return (i);
+    return (_puts("(nil)"));
 }
 
-cast = (unsigned long int)ptr;
-_putchar('0');
-_putchar('x');
-a = print_hex(cast, 0);
+str = convert(ptr, 16, 1);
+count += _puts("0x");
+count += _puts(str);
 
-return (a + 2);
+return (count);
 }

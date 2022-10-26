@@ -1,4 +1,4 @@
-.TH man 3 "22 october 2022" "0.1" "_printf man page"
+.TH man 3 "26 october 2022" "0.1" "_printf man page"
 .SH NAME
 .B _printf
 - Formatted output.

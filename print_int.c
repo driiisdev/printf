@@ -10,10 +10,10 @@ unsigned int num = n;
 
 if (num / 10)
 {
-print_num_rec(num / 10);
+    print_num_rec(num / 10);
 }
 
-_putchar('0' + num % 10);
+_putchar((num % 10) + '0');
 }
 
 
@@ -22,23 +22,23 @@ _putchar('0' + num % 10);
  * @i: Integer
  * Return: int
  */
-int print_int(va_list i)
+int print_int(va_list i, flags_t *f)
 {
 unsigned int n = va_arg(i, int);
 int count = 1, num = n;
 
 if (num < 0)
 {
-_putchar('-');
-num *= -1;
-n = num;
-count += 1;
+    _putchar('-');
+    num *= -1;
+    n = num;
+    count += 1;
 }
 
 while (n > 9)
 {
-n /= 10;
-count++;
+    n /= 10;
+    count++;
 }
 
 print_num_rec(num);
