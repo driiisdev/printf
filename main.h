@@ -17,12 +17,6 @@ typedef struct print
 
 int _putchar(char c);
 
-// int get_flag(char s);
-// char *convert(unsigned long int num, int base, int lowercase);
-// int (*get_print(char s))(va_list);
-
-int _printf(const char *format, ...);
-
 int print_char(va_list c);
 int print_string(va_list s);
 
@@ -38,6 +32,8 @@ int print_pointer(va_list p);
 int print_special_chars(va_list S);
 int print_rev(va_list r);
 int print_rot13(va_list R);
+
+int _printf(const char *format, ...);
 
 int print_perc(va_list perc);
 
