@@ -1,8 +1,10 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <limits.h>
 
 /**
  * struct print - structure for printing various types
@@ -33,8 +35,8 @@ int print_special_chars(va_list S);
 int print_rev(va_list r);
 int print_rot13(va_list R);
 
-int _printf(const char *format, ...);
-
 int print_perc(va_list perc);
+
+int _printf(const char *format, ...);
 
 #endif
