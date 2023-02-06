@@ -66,7 +66,7 @@ Printing a Decimal:
 
 ---
 
-## File Functions
+## Functions
 
 ### _printf.c
 
@@ -75,6 +75,11 @@ contains the fucntion `_printf`, which uses the prototype `int _printf(const cha
 ### _putchar.c
 
 contains the function `_putchar`, which writes a character to stdout.
+
+### _puts.c
+
+contains the function `_puts`, prints a string with newline.
+
 
 ### main.h
 
@@ -108,7 +113,7 @@ Function that Prints a Binary.
 
     /* Indetifier : %b */
 
-### print_oct.c
+### print_octal.c
 
 Function that Prints Decimal in Octal.
 
@@ -126,13 +131,13 @@ Function that Prints Decimal in Hexadecimal.
 
 	/* Indetifier : %x */
 
-### print_hex_upper.c
+### print_HEX.c
 
 Function that prints Decimal in Uppercase Hexadecimal.
 
 	/* Indetifier : %X */
 
-### print_pointer.c
+### print_address.c
 
 Function that print an address (pointer).
 
@@ -150,7 +155,7 @@ Function that print string in rot13.
 
 	/* Indetifier : %R */
 
-### print_special_chars.c
+### print_S.c
 
 Function that Prints a special characters.
 
